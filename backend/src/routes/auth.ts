@@ -6,7 +6,7 @@ const router = express.Router();
 //prefix: <url>/api/auth
 
 router.post("/signin", signin as RequestHandler);
-//router.get('/login', login);
+router.post('/login', login as RequestHandler);
 
 // router.post('/logout', logout);
 

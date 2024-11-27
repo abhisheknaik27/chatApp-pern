@@ -59,9 +59,30 @@ export const signin = async (req: Request, res: Response) => {
 
 export const login = async (req: Request, res: Response) => {
     try {
-        res.send('hey');
+        try {
+            const { username, password } = req.body;
+            const user = await prisma.user.findUnique({ where: {username} });
+            if(!user){
+                return res.status(400).json({ error: "Invalid Username" });
+            }
+
+            const isPassword = await bcryptjs.compare(password, user.password);
+            if(!isPassword){
+                return res.status(400).json({ error: "Invalid Password" });
+            }
+            generateToken(user.id, res);
+            res.status(200).json({ 
+                id: user.id, 
+                fullname: user.fullname,
+                username: user.username,
+                profilePic: user.profilePic
+            });
+        } catch (error: any) {
+            console.log('Error in signup controller', error.message);  
+            res.status(500).json({ message: "Internal Server Error" });
+        }
     } catch (error) {
-        console.log(error);
+        
     }
 };
 
