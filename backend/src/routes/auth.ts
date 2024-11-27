@@ -1,14 +1,14 @@
-import express from "express";
-import { login, logout, signup } from '../controllers/authController.js'; 
+import express, { RequestHandler } from "express";
+import { signin, login } from "../controllers/authController.js"
 
 const router = express.Router();
 
 //prefix: <url>/api/auth
-router.post('/signup', signup);
 
-router.post('/login', login);
+router.post("/signin", signin as RequestHandler);
+//router.get('/login', login);
 
-router.post('/logout', logout);
+// router.post('/logout', logout);
 
 
 

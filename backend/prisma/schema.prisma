@@ -33,7 +33,7 @@ model Conversation {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  participantUd String[]
+  participantIds String[]
   participants  User[]
 
   messagesIds String[]
