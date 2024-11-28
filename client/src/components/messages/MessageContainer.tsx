@@ -11,7 +11,7 @@ const MessageContainer = () => {
       ) : (
         <>
           {/* Header */}
-          <div className="bg-slate-900 opacity-60 px-4 py-2 mb-2 flex align-middle items-center gap-2">
+          <div className="bg-slate-900 opacity-60 px-4 py-4 mb-2 flex align-middle items-center gap-2">
             <span className="label-text">To:</span>
             <span className="text-white font-bold "> John Doe</span>
           </div>

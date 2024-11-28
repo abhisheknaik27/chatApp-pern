@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 body {
-  background: rgb(18,233,224);
-  background: radial-gradient(circle, rgba(18,233,224,1) 8%, rgba(60,60,149,1) 100%, rgba(0,212,255,1) 100%);
+  background: rgb(18, 233, 224);
+  background: radial-gradient(
+    circle,
+    rgba(18, 233, 224, 1) 8%,
+    rgba(60, 60, 149, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

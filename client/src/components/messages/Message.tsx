@@ -1,4 +1,4 @@
-const Message = () => {
+const Message = ({ message }: { message: any }) => {
   return (
     <div className="chat chat-end">
       <div className="chat-image avatar">
@@ -9,7 +9,7 @@ const Message = () => {
           />
         </div>
       </div>
-      <div className="chat-bubble text-white bg-blue-500">Hello</div>
+      <div className="chat-bubble text-white bg-blue-500">{message.body}</div>
       <div className="chat-footer text-slate-700 opacity-50 text-xs flex gap-1 items-center">
         10.12
       </div>
