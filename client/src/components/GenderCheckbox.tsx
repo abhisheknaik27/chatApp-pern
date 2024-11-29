@@ -1,4 +1,10 @@
-const GenderCheckbox = () => {
+const GenderCheckbox = ({
+  selectedGender,
+  onCheckBoxChange,
+}: {
+  selectedGender: string;
+  onCheckBoxChange: (gender: "male" | "female") => void;
+}) => {
   return (
     <div className="flex justify-start mt-4 gap-10">
       <div className="form-control">
@@ -9,6 +15,8 @@ const GenderCheckbox = () => {
           <input
             type="checkbox"
             className="checkbox border-slate-900 bg-blue-100"
+            checked={selectedGender === "male"}
+            onChange={() => onCheckBoxChange("male")}
           />
         </label>
       </div>
@@ -20,6 +28,8 @@ const GenderCheckbox = () => {
           <input
             type="checkbox"
             className="checkbox border-slate-800 bg-blue-100"
+            checked={selectedGender === "female"}
+            onChange={() => onCheckBoxChange("female")}
           />
         </label>
       </div>
