@@ -10,7 +10,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 
-const PORT = 2005;
+const PORT = process.env.PORT || 5005;
 
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
