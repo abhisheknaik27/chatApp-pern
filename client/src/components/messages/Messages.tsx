@@ -1,9 +1,11 @@
 import Message from "./Message";
-import { DUMMY_CONVERSATIONS } from "../../dummyData/dummy";
+import useGetMessages from "../../hooks/useGetMessages";
+
 const Messages = () => {
+  const { messages, loading } = useGetMessages();
   return (
     <div className="px-4 flex-1 overflow-auto">
-      {DUMMY_CONVERSATIONS.map((message) => (
+      {messages.map((message) => (
         <Message key={message.id} message={message} />
       ))}
     </div>
